@@ -8,11 +8,13 @@
     <title></title>
 </head>
 <body>
-    <form action="" method="post"></form>
+    <form action="controller/RegistrarNota.ashx" method="post">
     <input type="text" name="nota" required placeholder="Nota">
     <br>
     <input type="submit" value="Registrar nota">
+    </form>
 
+     <a href="Estadisticas.aspx">Ver estadisticas</a>
 
 
 </body>

@@ -10,7 +10,7 @@ namespace ejercicio3.Model
 
 
     {
-        public DAO_Nota(string bd) : base("notasCSharp")
+        public DAO_Nota() : base("notasCSharp")
         {
         }
 
@@ -38,5 +38,22 @@ namespace ejercicio3.Model
         {
             Ejecutar("UPDATE nota SET valor="+ob.Valor+" WHERE id="+ob.Id+" ");
         }
+
+        public int GetCantNotas()
+        {
+            int cant = 0;
+
+            
+            DataTable dt= Ejecutar("SELECT COUNT(*) FROM nota");
+
+            cant = int.Parse(dt.Rows[0][0].ToString());
+
+
+            return cant;
+
+        }
+
+
+
     }
 }

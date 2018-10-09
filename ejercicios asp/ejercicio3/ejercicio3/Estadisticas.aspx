@@ -10,5 +10,26 @@
 <body>
 
 
+    <h1>Estadisticas</h1>
+
+    <% DAO_Nota dn = new DAO_Nota(); %>
+
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+
 </body>
 </html>
