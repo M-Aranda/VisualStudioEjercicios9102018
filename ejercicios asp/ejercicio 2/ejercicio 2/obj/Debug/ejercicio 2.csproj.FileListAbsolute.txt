@@ -1,0 +1,9 @@
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\bin\ejercicio 2.dll.config
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\bin\ejercicio 2.dll
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\bin\ejercicio 2.pdb
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\obj\Debug\ejercicio 2.csprojResolveAssemblyReference.cache
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\obj\Debug\ejercicio 2.csproj.CoreCompileInputs.cache
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\obj\Debug\ejercicio 2.dll
+C:\Users\maranda\Desktop\ejercicios asp\ejercicio 2\ejercicio 2\obj\Debug\ejercicio 2.pdb
