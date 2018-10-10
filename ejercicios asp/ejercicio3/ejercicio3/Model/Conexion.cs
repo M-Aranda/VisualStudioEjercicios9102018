@@ -3,66 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-/*Imports necesarios para una conexión hacia MS SQL*/
 using System.Data;
 using System.Data.SqlClient;
 
 namespace ejercicio3.Model
 {
+    /// <summary>
+    /// Description of Conexion.
+    /// </summary>
+    public class Conexion
+    {
+        private SqlConnection con;
+        private SqlCommand sen;
+        public SqlDataReader rs;
 
-        public class Conexion
+        public Conexion(String bd)
         {
-            private SqlConnection con; // Connection
-            private SqlCommand sen; // Statement
-            public SqlDataReader rs; // ResultSet
+            con = new SqlConnection(
+                    "Data Source=localhost;" +
+                    "Initial Catalog=" + bd + "; " +
+                    "Integrated Security=true; "
+                );
 
-            public Conexion(String bd)
-            {
-                con = new SqlConnection(
-                        "Data Source=localhost;" +
-                        "Initial Catalog=" + bd + "; " +
-                        "User id=sa; " +
-                        "Password=123456;"
-                    );
-
-                /*
-                Autenticación de windows
-                "Data Source=ServerName;" +
-                "Initial Catalog=DataBaseName;" +
-                "Integrated Security=SSPI;";
-                */
-
-                // url de conexión
-            }
-
-            public DataTable Ejecutar(String query)
-            {
-                Console.WriteLine("QUERY=" + query);
-                DataTable dt = null;
-
-                con.Open();
-                sen = new SqlCommand(query, con);
-
-                if (query.ToLower().Contains("select"))
-                {
-                    rs = sen.ExecuteReader();
-                    dt = new DataTable();
-                    dt.Load(rs);
-                }
-                else
-                { //insert, update, delete
-                    sen.ExecuteNonQuery();
-                }
-                Cerrar();
-
-                return dt;
-            }
-
-            public void Cerrar()
-            {
-                con.Close();
-            }
         }
 
+        public DataTable Ejecutar(String query)
+        {
+            Console.WriteLine("QUERY=" + query);
+            DataTable dt = null;
+
+            con.Open();
+            sen = new SqlCommand(query, con);
+
+            if (query.ToLower().Contains("select"))
+            {
+                rs = sen.ExecuteReader();
+                dt = new DataTable();
+                dt.Load(rs);
+            }
+            else
+            {
+                sen.ExecuteNonQuery();
+            }
+            Cerrar();
+            return dt;
+        }
+
+        public void Cerrar()
+        {
+            con.Close();
+        }
     }
+}

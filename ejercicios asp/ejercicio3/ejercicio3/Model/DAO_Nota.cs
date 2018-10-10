@@ -36,7 +36,7 @@ namespace ejercicio3.Model
 
         public void Update(Nota ob)
         {
-            Ejecutar("UPDATE nota SET valor="+ob.Valor+" WHERE id="+ob.Id+" ");
+            Ejecutar("UPDATE nota SET valor="+ob.Valor+" WHERE id="+ob.Id+" ;");
         }
 
         public int GetCantNotas()
@@ -44,7 +44,7 @@ namespace ejercicio3.Model
             int cant = 0;
 
             
-            DataTable dt= Ejecutar("SELECT COUNT(*) FROM nota");
+            DataTable dt= Ejecutar("SELECT COUNT(*) FROM nota;");
 
             cant = int.Parse(dt.Rows[0][0].ToString());
 
@@ -52,6 +52,84 @@ namespace ejercicio3.Model
             return cant;
 
         }
+
+
+
+        public int GetCantAzules()
+        {
+            int cant = 0;
+
+            DataTable dt = Ejecutar("SELECT COUNT(*) FROM nota WHERE valor >= 40;");
+
+            cant = int.Parse(dt.Rows[0][0].ToString());
+
+            return cant;
+
+
+        }
+
+        public int GetCantRojos()
+        {
+            int cant = 0;
+
+            DataTable dt = Ejecutar("SELECT COUNT(*) FROM nota WHERE valor < 40;");
+
+            cant = int.Parse(dt.Rows[0][0].ToString());
+
+            return cant;
+
+
+        }
+
+
+        public int GetNotaMasAlta()
+        {
+            int valor=0;
+
+            DataTable dt = Ejecutar("SELECT MAX(valor) FROM nota;");
+
+            valor = int.Parse(dt.Rows[0][0].ToString());
+
+            return valor;
+        }
+
+        public int GetNotaMasBaja()
+        {
+            int valor = 0;
+
+            DataTable dt = Ejecutar("SELECT MIN(valor) FROM nota;");
+
+            valor = int.Parse(dt.Rows[0][0].ToString());
+
+            return valor;
+
+        }
+
+        public int GetCantSietes()
+        {
+            int cant = 0;
+
+            DataTable dt = Ejecutar("SELECT COUNT(*) FROM nota WHERE valor = 40;");
+
+            cant = int.Parse(dt.Rows[0][0].ToString());
+
+            return cant;
+
+        }
+
+
+        public double GetPromedioDelCurso()
+        {
+            double cant = 0;
+
+            DataTable dt = Ejecutar("SELECT AVG(valor) FROM nota;");
+
+            cant = double.Parse(dt.Rows[0][0].ToString());
+
+            return cant;
+
+        }
+
 
 
 

@@ -11,7 +11,13 @@ PRIMARY KEY (id)
 )
 GO
 
+
 /*
 SELECT * FROM nota
+GO
+
+USE master
+GO
+DROP DATABASE notasCSharp
 GO
 */
