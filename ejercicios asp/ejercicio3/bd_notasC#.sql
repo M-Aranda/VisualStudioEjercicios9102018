@@ -12,6 +12,9 @@ PRIMARY KEY (id)
 GO
 
 
+
+
+
 /*
 SELECT * FROM nota
 GO

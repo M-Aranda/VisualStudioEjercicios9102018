@@ -109,7 +109,7 @@ namespace ejercicio3.Model
         {
             int cant = 0;
 
-            DataTable dt = Ejecutar("SELECT COUNT(*) FROM nota WHERE valor = 40;");
+            DataTable dt = Ejecutar("SELECT COUNT(*) FROM nota WHERE valor = 70;");
 
             cant = int.Parse(dt.Rows[0][0].ToString());
 
@@ -129,6 +129,7 @@ namespace ejercicio3.Model
             return cant;
 
         }
+
 
 
 
